@@ -181,8 +181,24 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
 volumes:
-  db-data: ./db
-  redis-queue-data: ./redis/redis-queue
-  redis-cache-data: ./redis/redis-cache
-  sites: ./sites
-  logs: ./logs
+  db-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./data/db
+      o: bind
+
+  redis-queue-data:
+  redis-cache-data:
+  sites:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./sites
+      o: bind
+  logs:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./logs
+      o: bind
