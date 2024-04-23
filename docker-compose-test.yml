@@ -6,6 +6,9 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
+    environment:
+      - INFOMANIAK_API_KEY=${INFOMANIAK_API_KEY}
+      - INFOMAIAK_PRODUCT_ID=${INFOMAIAK_PRODUCT_ID}
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
