@@ -187,7 +187,6 @@ volumes:
       type: none
       device: ./data/db
       o: bind
-
   redis-queue-data:
   redis-cache-data:
   sites:
